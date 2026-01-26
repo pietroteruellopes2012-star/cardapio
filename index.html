@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cardápio</title>
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lilita One', cursive;
+        }
+
+        body {
+            background-image: url("fundo.jpg");
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 420px;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.65);
+            border-radius: 16px;
+            padding: 20px;
+        }
+
+        /* LOGO */
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 10px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fab72e;
+            margin-bottom: 20px;
+        }
+
+        /* BOTÕES */
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .buttons button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: #fab72e;
+            color: #000;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* LISTAS */
+        .lista {
+            display: none;
+        }
+
+        .lista.ativa {
+            display: block;
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 10px;
+            margin-bottom: 12px;
+        }
+
+        .item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .info {
+            flex: 1;
+            color: #fff;
+        }
+
+        .info span {
+            display: block;
+            color: #fab72e;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- LOGO -->
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo">
+        </div>
+
+        <!-- NOME -->
+        <h1>SUA HAMBURGUERIA</h1>
+
+        <!-- BOTÕES -->
+        <div class="buttons">
+            <button onclick="mostrarPratos()">Pratos</button>
+            <button onclick="mostrarLanches()">Lanches</button>
+        </div>
+
+        <!-- PRATOS -->
+        <div id="pratos" class="lista ativa">
+            <div class="item">
+                <img src="prato1.png" alt="Linguiça Toscana">
+                <div class="info">
+                    Linguiça Toscana
+                    <span>R$ 35,00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- LANCHES -->
+        <div id="lanches" class="lista">
+            <div class="item">
+                <img src="burguer1.jpg" alt="Burghinho">
+                <div class="info">
+                    Burghinho
+                    <span>R$ 16,00</span>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="burguer2.jpg" alt="Saladinha">
+                <div class="info">
+                    Saladinha
+                    <span>R$ 17,00</span>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="burguer3.jpg" alt="Beiquinho">
+                <div class="info">
+                    Beiquinho
+                    <span>R$ 17,00</span>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="burguer4.jpg" alt="Chickinho Jr">
+                <div class="info">
+                    Chickinho Jr
+                    <span>R$ 17,00</span>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="burguer5.jpg" alt="Big Cheddar Bacon">
+                <div class="info">
+                    Big Cheddar Bacon
+                    <span>R$ 27,00</span>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="burguer6.jpg" alt="Australiano">
+                <div class="info">
+                    Australiano
+                    <span>R$ 27,00</span>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="burguer7.jpg" alt="Big Salada">
+                <div class="info">
+                    Big Salada
+                    <span>R$ 27,00</span>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="burguer8.jpg" alt="Cremosão">
+                <div class="info">
+                    Cremosão
+                    <span>R$ 27,00</span>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="burguer9.jpg" alt="Churras">
+                <div class="info">
+                    Churras
+                    <span>R$ 26,00</span>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="burguer10.jpg" alt="Big Chicken">
+                <div class="info">
+                    Big Cheddar Bacon
+                    <span>R$ 26,00</span>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="burguer11.jpg" alt="Heisen Veg">
+                <div class="info">
+                    Heisen Veg
+                    <span>R$ 32,00</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        function mostrarPratos() {
+            document.getElementById("pratos").classList.add("ativa");
+            document.getElementById("lanches").classList.remove("ativa");
+        }
+
+        function mostrarLanches() {
+            document.getElementById("lanches").classList.add("ativa");
+            document.getElementById("pratos").classList.remove("ativa");
+        }
+    </script>
+
+</body>
+
+</html>
